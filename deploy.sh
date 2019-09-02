@@ -11,4 +11,4 @@ docker push doutside/multi-worker:$SHA
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=doutside/multi-server:$SHA
 kubectl set image deployments/client-deployment client=doutside/multi-client:$SHA
-kubectl set mage deployments/worker-deployment worker=doutside/multi-worker:$SHA
+kubectl set image deployments/worker-deployment worker=doutside/multi-worker:$SHA
