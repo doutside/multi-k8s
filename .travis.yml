@@ -14,11 +14,11 @@ before_install:
   - gcloud config set project verdant-inquiry-251611
   - gcloud config set compute/zone europe-west4-b
   - gcloud container clusters get-credentials multi-cluster
-  - echo "$DOCKER_PQSSWORD" | docker -u "$DOCKER_USERNAME" --password-stdout
-  - docker build -t doutside/react-test -f ./client/Dockerfile.dev ./client/
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t doutside/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run doutside/react-test npm run test -- --coverage
+  - docker run -e CI=true doutside/react-test npm run test
 
 deploy:
   provider: script
