@@ -1,3 +1,4 @@
+#v1
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
