@@ -6,6 +6,6 @@ spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: 'doutside@gmail.com'
-    prvateKeySecretRef:
+    privateKeySecretRef:
       name: letsencrypt-prod
     http01: {}
