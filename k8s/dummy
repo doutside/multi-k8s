@@ -7,14 +7,14 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s.dataplus.ru
+  commonName: k8s-multi.com
   dnsNames:
-    - k8s.dataplus.ru
-    - www.k8s.dataplus.ru
+    - k8s-multi.com
+    - www.k8s-multi.com
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - k8s.dataplus.ru
-          - www.k8s.dataplus.ru
+          - k8s-multi.com
+          - www.k8s-multi.com
